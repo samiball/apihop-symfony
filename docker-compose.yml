@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  apihop:
+    image: dunglas/frankenphp
+    container_name: apihop
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - .:/app
+    environment:
+      - FRANKENPHP_CONFIG=/app/frankenphp.json
+    restart: unless-stopped
